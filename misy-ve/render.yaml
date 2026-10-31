@@ -1,0 +1,26 @@
+# Déploiement en un clic sur Render (https://render.com) — le disque persistant garde la base et les photos.
+services:
+  - type: web
+    name: misy-ve
+    runtime: node
+    plan: starter
+    buildCommand: "echo 'aucune dépendance à installer'"
+    startCommand: "npm start"
+    healthCheckPath: /api/health
+    disk:
+      name: misy-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATA_DIR
+        value: /var/data
+      - key: TRUST_PROXY
+        value: "true"
+      - key: SEED_DEMO
+        value: "false"
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false

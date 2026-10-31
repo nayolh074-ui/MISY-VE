@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#102a43">
+  <meta name="description" content="MISY VE ? Trouvez les produits disponibles dans les commerces près de chez vous à Madagascar.">
+  <title>MISY VE ? — Trouvez près de chez vous</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <noscript><p style="padding:20px;text-align:center">MISY VE ? a besoin de JavaScript pour fonctionner. Merci de l'activer dans votre navigateur.</p></noscript>
+  <div class="announcement"><span class="pulse"></span> Le commerce local, plus facile à trouver <span class="announcement-right">Madagascar 🇲🇬</span></div>
+  <header class="site-header">
+    <a class="brand" href="#" data-view="home" aria-label="MISY VE accueil">
+      <span class="brand-mark">M</span><span class="brand-name">MISY<span>VE</span><b>?</b></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+      <a href="#catalogue" data-view="home" class="nav-link active">Explorer</a>
+      <a href="#comment-ca-marche" data-scroll="comment-ca-marche" class="nav-link">Comment ça marche</a>
+      <a href="#vendeurs" data-scroll="vendeurs" class="nav-link">Pour les vendeurs</a>
+      <a href="#" id="nav-login" class="nav-link mobile-only">Mon espace</a>
+    </nav>
+    <div class="header-actions">
+      <button class="btn btn-ghost desktop-only" id="open-login">Connexion</button>
+      <button class="btn btn-primary" id="open-seller">＋ Ajouter ma boutique</button>
+      <button class="mobile-menu" id="mobile-menu" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-content">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> ACHETER PLUS INTELLIGEMMENT À MADAGASCAR</div>
+        <h1>Tu cherches un produit ?<br><span>On te montre où le trouver.</span></h1>
+        <p class="hero-copy">Compare les offres des commerces de ta ville, découvre les boutiques et contacte directement le vendeur avant de te déplacer.</p>
+        <form class="search-panel" id="hero-search">
+          <span class="search-icon">⌕</span>
+          <input id="hero-query" type="search" placeholder="Ex. : écouteurs Bluetooth, riz, clavier..." autocomplete="off">
+          <select id="hero-city" aria-label="Ville">
+            <option value="Toutes les villes">Toutes les villes</option>
+            <option>Mahajanga</option><option>Antananarivo</option><option>Toamasina</option><option>Antsirabe</option><option>Fianarantsoa</option><option>Toliara</option><option>Antsiranana</option>
+          </select>
+          <button class="btn btn-primary search-submit" type="submit">Rechercher <span>→</span></button>
+        </form>
+        <div class="popular-searches"><span>Populaire :</span><button data-search="Téléphone">Téléphone</button><button data-search="Écouteurs">Écouteurs</button><button data-search="Riz">Riz</button></div>
+        <div class="hero-proof"><div class="proof-avatars"><i>R</i><i>M</i><i>T</i></div><span id="hero-stats"><strong>Un seul endroit.</strong> Plusieurs commerces à découvrir.</span></div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+        <div class="floating-card card-top"><span class="mini-icon mint">✓</span><div><b>Disponible près de toi</b><small>Des offres locales à découvrir</small></div></div>
+        <div class="phone-mockup">
+          <div class="phone-notch"></div><div class="phone-head"><span class="tiny-logo">M</span><span>Découvrir</span><span class="phone-dot">•••</span></div>
+          <div class="phone-search">⌕ &nbsp; Chercher un produit</div>
+          <div class="phone-label">Suggestions du jour</div>
+          <div class="phone-product"><div class="product-emoji p-blue">🎧</div><div><b>Écouteurs sans fil</b><small>3 boutiques · Mahajanga</small></div><strong>›</strong></div>
+          <div class="phone-product"><div class="product-emoji p-yellow">📱</div><div><b>Smartphone</b><small>5 boutiques · Mahajanga</small></div><strong>›</strong></div>
+          <div class="phone-product"><div class="product-emoji p-green">⌨️</div><div><b>Clavier AZERTY</b><small>2 boutiques · Mahajanga</small></div><strong>›</strong></div>
+          <div class="phone-bottom"><span>⌂</span><span>⌕</span><span>♡</span><span>♙</span></div>
+        </div>
+        <div class="floating-card card-bottom"><span class="mini-icon orange">↗</span><div><b>Contact direct</b><small>Échange avec le vendeur</small></div></div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div><span class="trust-icon">⌕</span><span><b>Recherche simple</b><small>Un produit, plusieurs pistes</small></span></div>
+      <div><span class="trust-icon">⌖</span><span><b>Commerces locaux</b><small>Commence près de chez toi</small></span></div>
+      <div><span class="trust-icon">↗</span><span><b>Contact direct</b><small>Pas d'intermédiaire inutile</small></span></div>
+    </section>
+
+    <section class="catalog-section section-wrap" id="catalogue">
+      <div class="section-heading">
+        <div><div class="eyebrow">LE CATALOGUE LOCAL</div><h2>Qu'est-ce que tu recherches ?</h2><p>Explore les produits publiés par les commerces partenaires.</p></div>
+        <div class="results-note" id="results-count">Produits à découvrir</div>
+      </div>
+      <div class="catalog-controls">
+        <div class="category-list" id="category-list">
+          <button class="category-chip selected" data-category="Tout">Tout</button>
+          <button class="category-chip" data-category="Téléphones">📱 Téléphones</button>
+          <button class="category-chip" data-category="Informatique">💻 Informatique</button>
+          <button class="category-chip" data-category="Maison">🏠 Maison</button>
+          <button class="category-chip" data-category="Alimentation">🥬 Alimentation</button>
+          <button class="category-chip" data-category="Mode">👕 Mode</button>
+        </div>
+        <div class="sort-wrap"><label for="sort-select">Trier :</label><select id="sort-select"><option value="recent">Récents</option><option value="price-asc">Prix croissant</option><option value="price-desc">Prix décroissant</option></select></div>
+      </div>
+      <div class="filter-row">
+        <div class="inline-search"><span>⌕</span><input id="catalog-query" type="search" placeholder="Rechercher dans le catalogue..."></div>
+        <select id="city-filter" aria-label="Filtrer par ville"><option value="Toutes les villes">Toutes les villes</option><option>Mahajanga</option><option>Antananarivo</option><option>Toamasina</option><option>Antsirabe</option><option>Fianarantsoa</option><option>Toliara</option><option>Antsiranana</option></select>
+      </div>
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+      <div class="empty-state hidden" id="empty-state"><div>⌕</div><h3>Aucun produit trouvé</h3><p>Essaie un autre mot-clé ou change les filtres.</p><button class="btn btn-outline" id="reset-filters">Réinitialiser les filtres</button></div>
+      <div class="catalog-bottom"><span>Les prix et disponibilités sont indicatifs. Confirme toujours auprès du vendeur.</span><button class="btn btn-outline hidden" id="load-more">Voir plus de produits <span>↓</span></button></div>
+    </section>
+
+    <section class="how-section" id="comment-ca-marche">
+      <div class="section-wrap">
+        <div class="center-heading"><div class="eyebrow">SIMPLE COMME BONJOUR</div><h2>En 3 étapes, tu trouves.</h2><p>Moins de déplacements inutiles. Plus de temps pour toi.</p></div>
+        <div class="steps-grid">
+          <article class="step-card"><div class="step-number">01</div><div class="step-illustration search-illustration">⌕</div><h3>Recherche ton produit</h3><p>Écris le nom du produit et choisis la ville où tu souhaites le trouver.</p></article>
+          <article class="step-card"><div class="step-number">02</div><div class="step-illustration shop-illustration">▦</div><h3>Compare les boutiques</h3><p>Découvre les prix annoncés, les commerces et les informations disponibles.</p></article>
+          <article class="step-card"><div class="step-number">03</div><div class="step-illustration chat-illustration">↗</div><h3>Contacte le vendeur</h3><p>Pose tes questions directement et confirme le stock avant de te déplacer.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="seller-cta section-wrap" id="vendeurs">
+      <div class="seller-copy"><div class="eyebrow light-eyebrow">VOUS ÊTES COMMERÇANT ?</div><h2>Faites découvrir vos produits à de nouveaux clients.</h2><p>Créez votre vitrine sur MISY VE ? et rendez vos produits plus faciles à trouver. L'inscription est gratuite pendant la phase de lancement.</p><button class="btn btn-white" id="cta-seller">Inscrire ma boutique <span>→</span></button></div>
+      <div class="seller-graphic"><div class="store-window"><div class="store-awning"></div><div class="store-body"><span>VOTRE</span><b>BOUTIQUE</b><small>visible ici</small></div></div><div class="seller-bubble bubble-a">+ de visibilité</div><div class="seller-bubble bubble-b">Clients locaux ↗</div></div>
+    </section>
+
+    <section class="faq-section section-wrap">
+      <div class="center-heading"><div class="eyebrow">QUESTIONS FRÉQUENTES</div><h2>Tu veux en savoir plus ?</h2></div>
+      <div class="faq-list">
+        <details><summary>MISY VE ? vend-il directement les produits ?</summary><p>Non. MISY VE ? met en relation les acheteurs et les commerces. L'achat se fait directement auprès du vendeur.</p></details>
+        <details><summary>Les prix affichés sont-ils garantis ?</summary><p>Non. Les prix et stocks peuvent changer. Contacte toujours le commerçant pour confirmer la disponibilité et le prix final.</p></details>
+        <details><summary>Comment ajouter ma boutique ?</summary><p>Clique sur « Ajouter ma boutique », crée ton compte gratuit et remplis les informations de ton commerce. Après validation par notre équipe, ta boutique et tes produits apparaissent dans le catalogue.</p></details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-main"><a class="brand footer-brand" href="#"><span class="brand-mark">M</span><span class="brand-name">MISY<span>VE</span><b>?</b></span></a><p>Trouver près de chez soi.<br>Valoriser les commerces locaux.</p><div class="footer-links"><a href="#catalogue">Explorer</a><a href="#vendeurs">Commerçants</a><a href="#comment-ca-marche">À propos</a><a href="/confidentialite">Confidentialité</a><a href="/conditions">Conditions</a><button id="footer-admin">Espace pro</button></div></div>
+    <div class="footer-bottom"><span>© <span id="year"></span> MISY VE ?</span><span>Conçu pour commencer localement à Madagascar 🇲🇬</span></div>
+  </footer>
+
+  <!-- Product details modal -->
+  <div class="modal-backdrop hidden" id="product-modal"><div class="modal modal-product" role="dialog" aria-modal="true"><button class="modal-close" data-close aria-label="Fermer">×</button><div id="product-detail-content"></div></div></div>
+  <!-- Seller registration modal -->
+  <div class="modal-backdrop hidden" id="seller-modal"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="seller-title"><button class="modal-close" data-close aria-label="Fermer">×</button><div class="modal-kicker">REJOINDRE MISY VE ?</div><h2 id="seller-title">Présentez votre boutique.</h2><p class="modal-intro">Créez votre compte vendeur gratuit. Votre boutique sera visible dans le catalogue après validation par notre équipe.</p>
+    <form id="seller-form" class="form-grid" novalidate>
+      <label>Nom de la boutique<input name="shop" required maxlength="80" placeholder="Ex. : Tech Mada"></label>
+      <label>Nom du responsable<input name="owner" required maxlength="80" autocomplete="name" placeholder="Votre nom"></label>
+      <label>E-mail<input name="email" type="email" required maxlength="120" autocomplete="email" placeholder="vous@exemple.mg"></label>
+      <label>Mot de passe<input name="password" type="password" required minlength="8" autocomplete="new-password" placeholder="8 caractères minimum"></label>
+      <label>Ville<select name="city" required><option value="">Choisir une ville</option><option>Mahajanga</option><option>Antananarivo</option><option>Toamasina</option><option>Antsirabe</option><option>Fianarantsoa</option><option>Toliara</option><option>Antsiranana</option><option>Autre</option></select></label>
+      <label>Catégorie<select name="category" required><option value="">Choisir</option><option>Téléphones</option><option>Informatique</option><option>Maison</option><option>Alimentation</option><option>Mode</option><option>Autre</option></select></label>
+      <label class="full">Téléphone / WhatsApp<input name="phone" type="tel" required maxlength="30" autocomplete="tel" placeholder="Ex. : 034 00 000 00"></label>
+      <label class="full">Adresse ou quartier<input name="address" maxlength="150" placeholder="Ex. : Centre-ville, près du marché"></label>
+      <label class="full">Description<textarea name="description" rows="3" maxlength="500" placeholder="Quels produits vendez-vous ?"></textarea></label>
+      <p class="form-error full hidden" id="seller-error" role="alert"></p>
+      <button class="btn btn-primary full" type="submit">Créer ma boutique →</button>
+    </form>
+    <p class="form-footnote">En créant un compte, vous acceptez les <a href="/conditions" target="_blank" rel="noopener">conditions d'utilisation</a> et la <a href="/confidentialite" target="_blank" rel="noopener">politique de confidentialité</a>. Le téléphone de votre boutique sera affiché publiquement.</p>
+  </div></div>
+  <!-- Login / dashboards -->
+  <div class="modal-backdrop hidden" id="login-modal"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="login-title"><button class="modal-close" data-close aria-label="Fermer">×</button><div class="modal-kicker">ESPACE COMMERÇANT</div><h2 id="login-title">Connexion</h2><p class="modal-intro">Accède à ta boutique pour gérer tes produits et prix.</p>
+    <form id="login-form" class="form-grid" novalidate>
+      <label class="full">E-mail<input name="email" type="email" required autocomplete="email" placeholder="vous@exemple.mg"></label>
+      <label class="full">Mot de passe<input name="password" type="password" required autocomplete="current-password" placeholder="Votre mot de passe"></label>
+      <p class="form-error full hidden" id="login-error" role="alert"></p>
+      <button class="btn btn-primary full" type="submit">Ouvrir mon espace →</button>
+    </form>
+    <p class="form-footnote">Pas encore de boutique ? <button type="button" class="link-btn" data-switch="seller-modal">Inscris-la gratuitement</button></p>
+  </div></div>
+  <div class="modal-backdrop hidden" id="dashboard-modal"><div class="modal modal-wide" role="dialog" aria-modal="true"><button class="modal-close" data-close aria-label="Fermer">×</button><div id="dashboard-content"></div></div></div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="/app.js" defer></script>
+</body>
+</html>
